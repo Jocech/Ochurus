@@ -1,7 +1,7 @@
 body{
     margin: 0px;
     padding: 0px;
-    background-color: #191A2C;
+    background-color: rgb(19, 28, 46);;
 }
 .row{
     margin-left: 0px;
@@ -18,7 +18,7 @@ body{
 #nombre{
     color: #FFFFFF;
     font-family: 'Cookie', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 50px;
+    margin-top: 0px;
     margin-bottom: 0px;
     font-size: 100px;
     text-shadow: 7px 7px 6px #000000
@@ -40,7 +40,7 @@ body{
     color: #FFFFFF !important;
     text-transform: uppercase;
     background: #dc3545;
-    padding: 12px;
+    padding: 6px;
     border: 4px solid #dc3545 !important;
     border-radius: 15px;
     display: inline-block;
@@ -58,4 +58,73 @@ body{
     padding-bottom:20px;
     padding-left:15px;
     padding-right:15px;
+}
+#btn-volver{
+    margin-left: 20px;
+}
+#tit-registro{
+    font-family: 'Cookie', 'Arial Narrow', Arial, sans-serif;
+}
+#nav-prin{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(14, 23, 38);
+}
+.a-nav{
+    color: rgb(121, 134, 163);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 9px;
+    margin-right: 9px;
+    text-shadow: 5px 5px 5px #000000;
+    font-size: 18px;
+}
+.a-nav:hover{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.img-champ-prin{
+    width: 230px;
+    height: 118px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    box-shadow: 7px 7px 8px #000000;
+}
+.btn{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#txt-buscador{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #FFFFFF;
+    margin-top: 20px;
+    font-size: 30px;
+    text-shadow: 5px 5px 5px #000000;
+}
+#nom-champ{
+    color: #FFFFFF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 45px;
+    text-shadow: 5px 5px 5px #000000;
+}
+#tit-stats{
+    color: #FFFFFF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    text-shadow: 5px 5px 5px #000000;
+}
+.stats{
+    color: #FFFFFF;
+    font-size: 20px;
+}
+.carousel{
+    box-shadow: 6px 6px 6px #000000;
+}
+#tit-champ{
+    color: #FFFFFF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 5px 5px 5px #000000;
+    margin-top: 10px;
+}
+.link-champ:hover{
+    text-decoration: none;
 }

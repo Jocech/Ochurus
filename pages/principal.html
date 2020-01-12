@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ochurus</title>
+    <link rel="manifest" href="../js/manifest.json">
     <link rel="stylesheet" href="../css/flexboxgrid.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -16,11 +17,11 @@
 </head>
 
 <body>
-    <div class="row center-xs nav">
+    <div class="row center-xs" id="nav-prin">
         <div class="col-xs-12">
-            <a class="item-nav" href="principal.html">Inicio</a>
-            <a class="item-nav" href="">Campeones</a>
-            <a class="item-nav" href="../index.html">Salir</a>
+            <a class="a-nav" href="principal.html">Inicio</a>
+            <a class="a-nav" href="campeones.html">Campeones</a>
+            <a class="a-nav" href="../index.html">Salir</a>
         </div>
     </div>
     <div class="row center-xs">
@@ -28,29 +29,36 @@
             <form>
                 <div class="form-group">
                     <label id="txt-buscador" for="buscador">Buscador</label>
-                    <input type="text" class="form-control" id="buscador" placeholder="Ingrese un campeón" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="buscador" placeholder="Ingrese un campeón"
+                        aria-describedby="emailHelp">
                 </div>
                 <button type="submit" class="btn btn-danger">Buscar</button>
             </form>
         </div>
     </div>
     <div class="row center-xs">
-        <div class="col-xs-5">
-            <img src="../img/Garen.jpg" class="img-champ" alt="">
-            <h1 id="nom-champ">Garen</h1>
-            <h1 id="tit-stats">Estadisticas</h1>
-            <p>Ap: 0</p>
-            <p>Ad: 0</p>
-            <p>Armadura: 0</p>
-            <p>Resistencia Mágica: 0</p>
+        <div class="col-xs-9">
+            <img src="../img/Garen.jpg" class="img-champ-prin" alt="">
         </div>
     </div>
     <div class="row center-xs">
-        <div class="col-xs-12">
-            <h1>build</h1>
-            <img src="../img/build.jpg" alt="">
+        <div class="col-xs-5">
+            <h1 id="nom-champ">Garen</h1>
+            <h1 id="tit-stats">Estadísticas</h1>
+            <div class="stats">
+                <p>Ap: 0</p>
+                <p>Ad: 0</p>
+                <p>Armadura: 0</p>
+                <p>Resistencia Mágica: 0</p>
+            </div>
         </div>
     </div>
+
+
+    <!--Script-->
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>
