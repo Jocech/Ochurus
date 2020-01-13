@@ -58,7 +58,7 @@ $("#formularioRegistrar").validate({
             required: "Este campo no puede estar vacio",
             email: "Debe ser en formato de email"
         },
-        contraseña: {
+        contrasena: {
             required: "Este campo no puede estar vacio",
             minlength: 8,
             maxlength: 16
