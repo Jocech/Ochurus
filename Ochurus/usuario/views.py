@@ -6,3 +6,9 @@ def index(request):
 
 def base(request):
     return render(request,'base.html',{})
+
+def inicio(request):
+    return render(request,'inicio.html',{})
+
+def campeones(request):
+    return render(request,'pagcampeones.html',{})

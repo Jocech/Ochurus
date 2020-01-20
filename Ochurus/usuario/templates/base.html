@@ -19,22 +19,18 @@
 <body>
     <div class="row center-xs" id="nav-prin">
         <div class="col-xs-12">
-            <a class="a-nav" href="principal.html">Inicio</a>
-            <a class="a-nav" href="pagcampeones.html">Campeones</a>
+            <a class="a-nav" href="{% url 'inicio' %}">Inicio</a>
+            <a class="a-nav" href="{% url 'campeones' %}">Campeones</a>
             <a class="a-nav" href="{% url 'index' %}">Salir</a>
         </div>
     </div>
-    <div class="row center-xs">
-        <div class="col-xs-4">
-            <form>
-                <div class="form-group">
-                    <label id="txt-buscador" for="buscador">Buscador</label>
-                    <input type="text" class="form-control" id="buscador" placeholder="Ingrese un campeón"
-                        aria-describedby="emailHelp">
-                </div>
-                <button type="submit" class="btn btn-danger">Buscar</button>
-            </form>
-        </div>
-    </div>
+    {% block content %}
+    {% endblock %}
+
+
+    <!--Script-->
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 </html>

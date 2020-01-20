@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row center-xs">
+    <div class="col-xs-4">
+        <form>
+            <div class="form-group">
+                <label id="txt-buscador" for="buscador">Buscador</label>
+                <input type="text" class="form-control" id="buscador" placeholder="Ingrese un campeón"
+                aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-danger">Buscar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

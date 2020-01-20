@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row center-xs">
+    <div class="col-xs-9 col-md-3">
+        <div class="card" style="width: 250px;">
+                <img src="{% static 'img/Garen/Garen1.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Garen</h5>
+                    <p class="card-text">El Poder de Demacia</p>
+                    <a href="../pages/campeones/garen.html" class="btn btn-danger">Ver Campeón</a>
+                </div>
+            </div>
+        </div>
+    <div class="col-xs-9 col-md-3">
+        <div class="card" style="width: 250px;">
+                <img src="{% static 'img/Lee/Lee1.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Lee Sin</h5>
+                    <p class="card-text">El Monje Ciego</p>
+                    <a href="../pages/campeones/leesin.html" class="btn btn-danger">Ver Campeón</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row center-xs">
+        <div class="col-xs-9 col-md-3">
+            <div class="card" style="width: 250px;">
+                    <img src="{% static 'img/Lux/Lux.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Lux</h5>
+                        <p class="card-text">La Dama de la Luminosidad</p>
+                        <a href="../pages/campeones/lux.html" class="btn btn-danger">Ver Campeón</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-9 col-md-3">
+        <div class="card" style="width: 250px;">
+                <img src="{% static 'img/Thresh/Thresh1.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Thresh</h5>
+                    <p class="card-text">El Guardián de la Cadena</p>
+                    <a href="../pages/campeones/thresh.html" class="btn btn-danger">Ver Campeón</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
