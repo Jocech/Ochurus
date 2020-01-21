@@ -12,3 +12,6 @@ def inicio(request):
 
 def campeones(request):
     return render(request,'pagcampeones.html',{})
+
+def registrar(request):
+    return render(request,'registrar.html',{})

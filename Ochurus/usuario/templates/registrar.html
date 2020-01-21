@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro</title>
-    <link rel="manifest" href="../js/manifest.json">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/flexboxgrid.css">
-    <link rel="stylesheet" href="../css/style.css">
+    {% load static %}
+    <link rel="manifest" href="{% static 'js/manifest.json' %}">
+    <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Cookie&display=swap" rel="stylesheet">
 </head>
 
@@ -51,11 +52,13 @@
             <button type="submit" class="btn btn-danger fuente-form ">Registrarse</button>
             <a href="{% url 'index' %}" class="btn btn-danger" id="btn-volver">Volver</a>
         </form>
+    </div>
 
-
-        <script src="../js/jquery-3.4.1.js"></script>
-        <script src="../js/jquery.validate.js"></script>
-        <script src="../js/app.js"></script>
+    <!--Script-->
+    <script src="{% static 'js/jquery-3.4.1.js'%}"></script>
+    <script src="{% static 'js/bootstrap.js'%}"></script>
+    <script src="{% static 'js/jquery.validate.js'%}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 
 </body>
 
