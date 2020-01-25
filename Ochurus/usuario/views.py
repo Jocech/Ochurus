@@ -54,10 +54,14 @@ def registrar_campeones(request):
     if request.POST:
         form = RegistrarCampeon(request.POST)
         if form.is_valid():
-            form.save()
-            messages.add_message(request,messages.INFO,'Campeon Creado')
-            return HttpResponseRedirect(reverse('usuario:campeones'))
-   
+            u = form.save(commit=False)
+            u.save()
+            messages.add_message(request, messages.INFO, 'Campeon Campeon')
+            return HttpResponseRedirect(reverse('usuario:regcampeon'))
+    else:
+        form = RegistrarCampeon()
+    return render(request, 'regcampeon.html', {'form': form})
+ 
 def cerrar_sesion(request):
     logout(request)
     return HttpResponseRedirect(reverse('usuario:index'))

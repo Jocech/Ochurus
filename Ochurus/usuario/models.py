@@ -15,11 +15,9 @@ class Mensajes(models.Model):
 class Campeon(models.Model):
     nombre = models.CharField(max_length=20)
     rol = models.CharField(max_length=10)
-    popularidad = models.DecimalField(max_digits=3, decimal_places=2)
-    porcentaje_victorias = models.DecimalField(max_digits=3, decimal_places=2)
-    porcentaje_derrotas = models.DecimalField(max_digits=3, decimal_places=2)
-    votos = models.IntegerField()
-    msj = models.ForeignKey(Mensajes,on_delete=models.CASCADE)
+    popularidad = models.IntegerField()
+    porcentaje_victorias = models.IntegerField()
+    porcentaje_derrotas = models.IntegerField()
    
 class ImgCampeon(models.Model):
     nombre = models.CharField(max_length=20)

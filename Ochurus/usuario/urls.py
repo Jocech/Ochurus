@@ -10,5 +10,6 @@ urlpatterns = [
     path('campeones/',views.campeones,name="campeones"),
     path('registrar/',views.registrar,name="registrar"),
     path('registrar_staff/',views.registrar_staff,name="regstaff"),
+    path('registrar_campeones/',views.registrar_campeones,name="regcampeon"),
     path('cerrarsesion/',views.cerrar_sesion,name="cerrar_sesion"),
 ]
