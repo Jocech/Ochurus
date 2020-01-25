@@ -19,7 +19,7 @@
     <div class="row end-md center-xs nav-reg">
         <div class="col-xs-12">
             <img src="img/logo.png" alt="" class="Logo">
-            <a href="{% url 'registrar' %}" class="btn btn-danger">Regístrate</a>
+            <a href="{% url 'usuario:registrar' %}" class="btn btn-danger">Regístrate</a>
         </div>
     </div>
     <div class="row center-xs">
@@ -28,19 +28,23 @@
             <h2 id="subtitulo">TU HERRAMIENTA PARA GANAR</h2>
         </div>
     </div>
-
     <div class="row center-xs">
         <div class="col-xs-3 letrasBlancas">
-            <form action="{% url 'inicio' %}" id="formularioIndex" method="POST">
+                {% if messages %}
+                    {% for message in messages %}
+                    <h4>{{message}}</h4>
+                    {% endfor %}
+                {% endif %}
+            <form action="{% url 'usuario:index' %}" id="formularioIndex" method="POST">
                 <br>
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="email">Usuario</label>
-                    <input class="form-control" type="email" name="email" placeholder="Ingresa Email">
+                    <input class="form-control" type="text" name="username" placeholder="Ingresa Usuario">
                 </div>
                 <div class="form-group">
                     <label for="contrasena">Contraseña</label>
-                    <input class="form-control" type="password" name="contrasena" placeholder="Ingresa Contraseña">
+                    <input class="form-control" type="password" name="password" placeholder="Ingresa Contraseña">
                 </div>
                 <div>
                     <br>

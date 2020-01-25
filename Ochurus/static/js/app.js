@@ -30,16 +30,16 @@ $("#formularioRegistrar").validate({
             required: true,
             email: true
         },
-        contrasena: {
+        password: {
             required: true,
             minlength: 8,
             maxlength: 16
         },
-        nombre: {
+        first_name: {
             required: true,
 
         },
-        apellido: {
+        last_name: {
             required: true,
         },
         ciudad: {
@@ -58,15 +58,15 @@ $("#formularioRegistrar").validate({
             required: "Este campo no puede estar vacio",
             email: "Debe ser en formato de email"
         },
-        contrasena: {
+        password: {
             required: "Este campo no puede estar vacio",
             minlength: 8,
             maxlength: 16
         },
-        nombre: {
+        first_name: {
             required: "Este campo no puede estar vacio",
         },
-        apellido: {
+        last_name: {
             required: "Este campo no puede estar vacio"
 
         },

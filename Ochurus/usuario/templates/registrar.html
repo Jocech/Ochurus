@@ -19,38 +19,12 @@
         <h1 id="nombre" id="tit-registro">Ochurus</h1>
     </div>
     <div class="row center-xs form-index letrasBlancas">
-        <form class="fuente-form" id="formularioRegistrar" method="POST" action="{% url 'index' %}">
-            <div class="form-row fuente-form ">
-                <div class="form-group col-md-6">
-                    <label for="email">Email</label>
-                    <input type="email" required class="form-control" name="email" placeholder="Ingrese Email">
-                </div>
-                <div class="form-group col-md-6 ">
-                    <label for="contrasena">Contraseña</label>
-                    <input type="password" required class="form-control" name="contrasena"
-                        placeholder="Ingrese Contraseña">
-                </div>
-            </div>
-            <div class="form-group fuente-form  ">
-                <label for="nombre">Nombre</label>
-                <input type="direccion" required class="form-control" name="nombre" placeholder="Ingrese Nombre">
-            </div>
-            <div class="form-group fuente-form  ">
-                <label for="apellido">Apellido</label>
-                <input type="text" required class="form-control" name="apellido" placeholder="Ingrese Apellido">
-            </div>
-            <div class="form-row fuente-form  ">
-                <div class="form-group col-md-6">
-                    <label for="ciudad">Ciudad</label>
-                    <input type="text" required class="form-control" name="ciudad" placeholder="Ingrese Ciudad">
-                </div>
-                <div class="form-group col-md-6 ">
-                    <label for="telefono">Telefono</label>
-                    <input type="text" required class="form-control" name="telefono" placeholder="Ingrese Numero Cel">
-                </div>
-            </div>
+        <form class="fuente-form" id="formularioRegistrar" method="POST" action="{% url 'usuario:registrar' %}"
+            class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
             <button type="submit" class="btn btn-danger fuente-form ">Registrarse</button>
-            <a href="{% url 'index' %}" class="btn btn-danger" id="btn-volver">Volver</a>
+            <a href="{% url 'usuario:index' %}" class="btn btn-danger" id="btn-volver">Volver</a>
         </form>
     </div>
 

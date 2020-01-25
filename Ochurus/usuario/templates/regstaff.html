@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row center-xs form-index letrasBlancas">
+        <form class="fuente-form" id="#" method="POST" action="{% url 'usuario:regstaff' %}"
+            class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-danger fuente-form ">Registrarse</button>
+            <a href="{% url 'usuario:index' %}" class="btn btn-danger" id="btn-volver">Volver</a>
+        </form>
+</div>
+{% endblock %}
