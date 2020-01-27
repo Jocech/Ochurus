@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="row center-xs form-index letrasBlancas">
-        <form class="fuente-form" id="#" method="POST" action="{% url 'usuario:regcampeon' %}" class="post-form">
+        <form class="fuente-form" id="#" method="POST" action="{% url 'usuario:regcampeon' %}" class="post-form" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-danger fuente-form">Registrarse</button>

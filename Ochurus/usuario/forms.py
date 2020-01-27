@@ -11,6 +11,6 @@ class RegistrarUsuario(forms.ModelForm):
 class RegistrarCampeon(forms.ModelForm):
     class Meta():
         model = Campeon
-        fields = ('nombre','rol','popularidad','porcentaje_victorias','porcentaje_derrotas')
+        fields = ('nombre','rol','popularidad','porcentaje_victorias','porcentaje_derrotas','imagen','imagen2','imagen3')
 
         

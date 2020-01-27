@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Items</title>
+</head>
+
+<body>
+    <form class="fuente-form" id="formularioItem" method="POST" action="{% url 'usuario:item' %}" enctype="multipart/form-data"
+        class="post-form">
+        {% csrf_token %}
+        <label for="nombre">Nombre del Item</label>
+        <input type="text" name="nombre">
+        <br>
+        <label for="foto">Imagen del Item</label>
+        <input type="file" name="foto">
+        <br>
+        <button type="submit" class="btn btn-danger">Subir</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Campeones creados</h1>
+    <table>
+        <thead>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Rol</th>
+            <th>Popularidad</th>
+            <th>Porcentaje de Victorias</th>
+            <th>Porcentaje de Derrotas</th>
+
+        </thead>
+        <tbody>
+            {% if  lista_campeones %}
+            {% for campeon in lista_campeones %}
+            <tr>
+                <td><img src="{{campeon.imagen.url}}" alt="" srcset=""></td>
+                <td>{{campeon.nombre}}</td>
+                <td>{{campeon.rol}}</td>
+                <td>{{campeon.popularidad}}</td>
+                <td>{{campeon.porcentaje_victorias}}</td>
+                <td>{{campeon.porcentaje_derrotas}}</td>
+            </tr>    
+            {% endfor %}
+
+            {% else %}
+            <h1>No hay registro de campeones </h1>
+
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+</html>

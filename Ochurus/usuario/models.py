@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+
 # Create your models here.
 
 class Usuario(AbstractUser):
@@ -18,12 +19,14 @@ class Campeon(models.Model):
     popularidad = models.IntegerField()
     porcentaje_victorias = models.IntegerField()
     porcentaje_derrotas = models.IntegerField()
-   
-class ImgCampeon(models.Model):
-    nombre = models.CharField(max_length=20)
-    url = models.ImageField(upload_to="imgcampeones",default="default.png")
+    imagen = models.ImageField(upload_to="imgcampeon",default="default.png")
+    imagen2 = models.ImageField(upload_to="imgcampeon",default="default.png")
+    imagen3 = models.ImageField(upload_to="imgcampeon",default="default.png")
 
-
-class Item (models.Model):
+class Item(models.Model):
     nombre = models.CharField(max_length=20)
-    url = models.URLField()
+    foto = models.ImageField(upload_to="items",default="default.png")
+
+class ItemCampeon(models.Model):
+    camp = models.ForeignKey(Campeon,on_delete=models.CASCADE)
+    item = models.ForeignKey(Item,on_delete=models.CASCADE)
