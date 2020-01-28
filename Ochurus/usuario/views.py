@@ -64,6 +64,7 @@ def item(request):
         i.save()
     return render(request,'items.html')
 
+def agregar_item(request):
     
 
 def registrar_campeones(request):
