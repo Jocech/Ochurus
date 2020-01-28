@@ -64,16 +64,13 @@ def item(request):
         i.save()
     return render(request,'items.html')
 
-def agregar_item(request):
-    
-
 def registrar_campeones(request):
     if request.POST:
         form = RegistrarCampeon(request.POST,request.FILES)
         if form.is_valid():
             u = form.save(commit=False)
             u.save()
-            messages.add_message(request, messages.INFO, 'Campeon Campeon')
+            messages.add_message(request, messages.INFO, 'Campeon Registrado')
             return HttpResponseRedirect(reverse('usuario:regcampeon'))
     else:
         form = RegistrarCampeon()
@@ -104,6 +101,23 @@ def campeon_list(request):
         'lista_campeones' : Campeon.objects.all()
     }
     return render(request,'listar.html',context)
+
+def campeon_editar(request, id_campeon):
+    campeon = Campeon.objects.get(id=id_campeon)
+    if request.method == 'GET':
+        form = RegistrarCampeon(instance=campeon)
+    else:
+        form = RegistrarCampeon(request.POST,instance=campeon)
+        if form.is_valid():
+            form.save()
+        return HttpResponseRedirect(reverse('usuario:listar'))
+    return render(request, 'regcampeon.html', {'form':form})
+
+def campeon_borrar(request,id):
+    campeon = Campeon.objects.get(pk=id)
+    campeon.delete()
+    messages.add_message(request, messages.INFO, 'Campeon fue borrado')
+    return HttpResponseRedirect(reverse('usuario:listar'))
 
 def iniciostaff(request):
     return render(request,'iniciostaff.html')

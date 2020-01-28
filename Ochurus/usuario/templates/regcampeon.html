@@ -27,7 +27,7 @@
         <form class="fuente-form" id="#" method="POST" action="{% url 'usuario:regcampeon' %}" class="post-form" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-danger fuente-form">Registrarse</button>
+            <button type="submit" class="btn btn-danger fuente-form">Guardar</button>
             <a href="{% url 'usuario:regcampeon' %}" class="btn btn-danger" id="btn-volver">Volver</a>
         </form>
     </div>    
