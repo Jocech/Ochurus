@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from .models import Usuario, Campeon, Item
 from .forms import RegistrarUsuario, RegistrarCampeon
 
@@ -33,11 +34,15 @@ def index(request):
 def base(request):
     return render(request,'base.html',{})
 
+@login_required(login_url="/")
 def inicio(request):
     return render(request,'inicio.html',{})
 
+
+@login_required(login_url="/")
 def campeones(request):
     return render(request,'pagcampeones.html',{})
+
 
 def registrar(request):
     if request.POST:
@@ -64,6 +69,7 @@ def item(request):
         i.save()
     return render(request,'items.html')
 
+@staff_member_required(login_url="/")
 def registrar_campeones(request):
     if request.POST:
         form = RegistrarCampeon(request.POST,request.FILES)
@@ -74,13 +80,14 @@ def registrar_campeones(request):
             return HttpResponseRedirect(reverse('usuario:regcampeon'))
     else:
         form = RegistrarCampeon()
-    return render(request, 'regcampeon.html', {'form': form})
- 
+        return render(request, 'regcampeon.html', {'form': form})
+    
 def cerrar_sesion(request):
     logout(request)
     return HttpResponseRedirect(reverse('usuario:index'))
-
-
+    
+    
+@staff_member_required(login_url="/")
 def registrar_staff(request):
     if request.POST:
         form = RegistrarUsuario(request.POST)
@@ -102,6 +109,7 @@ def campeon_list(request):
     }
     return render(request,'listar.html',context)
 
+@staff_member_required(login_url="/")
 def campeon_editar(request, id_campeon):
     campeon = Campeon.objects.get(id=id_campeon)
     if request.method == 'GET':
@@ -113,11 +121,13 @@ def campeon_editar(request, id_campeon):
         return HttpResponseRedirect(reverse('usuario:listar'))
     return render(request, 'regcampeon.html', {'form':form})
 
+@staff_member_required(login_url="/")
 def campeon_borrar(request,id):
     campeon = Campeon.objects.get(pk=id)
     campeon.delete()
     messages.add_message(request, messages.INFO, 'Campeon fue borrado')
     return HttpResponseRedirect(reverse('usuario:listar'))
 
+@staff_member_required(login_url="/")
 def iniciostaff(request):
     return render(request,'iniciostaff.html')
