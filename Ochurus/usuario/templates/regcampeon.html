@@ -1,42 +1,18 @@
-<!DOCTYPE html>
-<html lang="es-cl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ochurus</title>
-
-    {% load static %}
-    <link rel="manifest" href="{% static 'js/manifest.json' %}">
-    <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <div class="row center-xs" id="nav-prin">
-        <div class="col-xs-12">
-        </div>
-    </div>
-    <div class="row center-xs form-index letrasBlancas">
-        <form class="fuente-form" id="#" method="POST" action="{% url 'usuario:regcampeon' %}" class="post-form" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-danger fuente-form">Guardar</button>
-            <a href="{% url 'usuario:regcampeon' %}" class="btn btn-danger" id="btn-volver">Volver</a>
-        </form>
-    </div>    
-
-    <!--Script-->
-    <script src="{% static 'js/jquery-3.4.1.js'%}"></script>
-    <script src="{% static 'js/bootstrap.js'%}"></script>
-    <script src="{% static 'js/jquery.validate.js'%}"></script>
-    <script src="{% static 'js/app.js' %}"></script>
-</body>
-
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row center-xs form-index letrasBlancas">
+    <form class="fuente-form" id="formularioRegCampeon" method="POST" 
+    {% if is_update %}
+    action="{% url 'usuario:campeon_editar' item.id %}"
+    {% else %}
+    action="{% url 'usuario:regcampeon' %}"
+     {% endif %}
+        class="post-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-danger fuente-form">Guardar</button>
+        <a href="{% url 'usuario:regcampeon' %}" class="btn btn-danger" id="btn-volver">Volver</a>
+    </form>
+</div>
+{% endblock %}

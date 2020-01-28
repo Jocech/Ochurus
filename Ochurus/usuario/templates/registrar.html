@@ -18,34 +18,35 @@
     <div class="row center-xs form-titulo">
         <h1 id="nombre" id="tit-registro">Ochurus</h1>
     </div>
-    <div class="row center-xs form-index letrasBlancas">
-        <form class="fuente-form" id="formularioRegistrar" method="POST" action="{% url 'usuario:registrar' %}"
+    <div class="row form-index letrasBlancas">
+        <form class="fuente-form col-xs-6 end-xs" id="formularioRegistrar" method="POST" action="{% url 'usuario:registrar' %}"
             class="post-form">
             {% csrf_token %}
             <label for="username">Nombre de usuario</label>
-            <input type="text" name="username">
-
+            <input type="text" name="username" class="reg">
+            <br>
             <label for="first_name">Nombre</label>
-            <input type="text" name="first_name">
-            
+            <input type="text" name="first_name" class="reg">
+            <br>
             <label for="last_name">Apellido</label>
-            <input type="text" name="last_name">
-            
+            <input type="text" name="last_name" class="reg">
+            <br>
             <label for="password">Contraseña</label>
-            <input type="password" name="password">
-            
+            <input type="password" name="password" class="reg">
+            <br>
             <label for="email">Correo Electrónico</label>
-            <input type="email" name="email">
-            
+            <input type="email" name="email" class="reg">
+            <br>
             <label for="ciudad">Ciudad</label>
-            <input type="text" name="ciudad">
-            
+            <input type="text" name="ciudad" class="reg">
+            <br>
             <label for="telefono">Telefono</label>
-            <input type="text" name="telefono">
-
+            <input type="text" name="telefono" class="reg">
+            <br>
             <button type="submit" class="btn btn-danger fuente-form">Registrarse</button>
             <a href="{% url 'usuario:index' %}" class="btn btn-danger" id="btn-volver">Volver</a>
         </form>
+        <img src="{% static 'img/LogoLol.png' %}" class="logolol">
     </div>
 
     <!--Script-->

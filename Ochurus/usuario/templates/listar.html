@@ -1,51 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/flexboxgrid.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Listar</title>
-</head>
-
-<body>
-    <h2>Campeones</h2>
-    <table>
-        <thead>
-            <td>#</td>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Rol</th>
-            <th>Popularidad</th>
-            <th>Porcentaje de Victorias</th>
-            <th>Porcentaje de Derrotas</th>
-            <th>Acciones</th>
-        </thead>
-        <tbody>
-            {% if  lista_campeones %}
-            {% for campeon in lista_campeones %}
-            <tr>
-                <td>{{ campeon.id }}</td>
-                <td><img src="{{campeon.imagen.url}}" width="10%"></td>
-                <td>{{campeon.nombre}}</td>
-                <td>{{campeon.rol}}</td>
-                <td>{{campeon.popularidad}}%</td>
-                <td>{{campeon.porcentaje_victorias}}%</td>
-                <td>{{campeon.porcentaje_derrotas}}%</td>
-                <td>
-                    <a class="btn btn-primary" href="{% url 'usuario:campeon_editar' campeon.id %}">Editar</a>
-                    <a href="{% url 'usuario:campeon_borrar' campeon.id %}">Borrar</a>
-                </td>
-            </tr>
-            {% endfor %}
-            {% else %}
-            <h1>No hay registro de campeones </h1>
-            {% endif %}
-        </tbody>
-    </table>
-</body>
-
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row center-xs">
+    <div class="col-xs-6">
+        <h2 class="titulolista">Campeones</h2>
+    </div>
+</div>
+<div class="row lista-camp">
+    <div class="col-xs-12">
+        <table>
+            <thead>
+                <td>#</td>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Rol</th>
+                <th>Popularidad</th>
+                <th>Porcentaje de Victorias</th>
+                <th>Porcentaje de Derrotas</th>
+                {% if user.is_staff %}
+                <th>Acciones</th>
+                {% endif %}
+            </thead>
+            <tbody>
+                {% if  lista_campeones %}
+                {% for campeon in lista_campeones %}
+                <tr>
+                    <td>{{ campeon.id }}</td>
+                    <td><img src="{{campeon.imagen.url}}" width="10%"></td>
+                    <td>{{campeon.nombre}}</td>
+                    <td>{{campeon.rol}}</td>
+                    <td>{{campeon.popularidad}}%</td>
+                    <td>{{campeon.porcentaje_victorias}}%</td>
+                    <td>{{campeon.porcentaje_derrotas}}%</td>
+                    {% if user.is_staff %}
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'usuario:campeon_editar' campeon.id %}">Editar</a>
+                        <br>
+                        <a class="btn btn-danger    " href="{% url 'usuario:campeon_borrar' campeon.id %}">Borrar</a>
+                    </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+                {% else %}
+                <h1>No hay registro de campeones </h1>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

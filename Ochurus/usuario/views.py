@@ -43,6 +43,11 @@ def inicio(request):
 def campeones(request):
     return render(request,'pagcampeones.html',{})
 
+def listar_item(request):
+    context = {
+        'lista_items' : Item.objects.all()
+    }
+    return render(request,'listaritems.html',context)
 
 def registrar(request):
     if request.POST:
@@ -59,6 +64,7 @@ def registrar(request):
         return HttpResponseRedirect(reverse('usuario:registrar'))
     return render(request, 'registrar.html')
 
+@staff_member_required(login_url="/")
 def item(request):
     if request.POST:
         nombre = request.POST.get('nombre',False)
@@ -81,7 +87,8 @@ def registrar_campeones(request):
     else:
         form = RegistrarCampeon()
         return render(request, 'regcampeon.html', {'form': form})
-    
+
+@login_required(login_url="/")
 def cerrar_sesion(request):
     logout(request)
     return HttpResponseRedirect(reverse('usuario:index'))
@@ -119,7 +126,7 @@ def campeon_editar(request, id_campeon):
         if form.is_valid():
             form.save()
         return HttpResponseRedirect(reverse('usuario:listar'))
-    return render(request, 'regcampeon.html', {'form':form})
+    return render(request, 'regcampeon.html', {'form':form,'is_update':True,'item':campeon})
 
 @staff_member_required(login_url="/")
 def campeon_borrar(request,id):

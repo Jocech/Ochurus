@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2>Campeones</h2>
+    <table>
+        <thead>
+            <td>#</td>
+            <th>Imagen</th>
+            {% if user.is_staff %}
+            <th>Acciones</th>
+            {% endif %}
+        </thead>
+        <tbody>
+            {% if  lista_items %}
+            {% for item in lista_items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td><img src="{{item.foto.url}}"></td>
+                <td>{{item.nombre}}</td>
+                {% if user.is_staff %}
+                <td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            {% else %}
+            <h1>No hay registro de campeones </h1>
+            {% endif %}
+        </tbody>
+    </table>
+
+
+
+
+{% endblock %}

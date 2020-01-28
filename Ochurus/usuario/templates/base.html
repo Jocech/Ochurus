@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-cl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,22 +17,42 @@
     <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    {% if user.is_staff %}
     <div class="row center-xs" id="nav-prin">
-        <div class="col-xs-12">
-            <a class="a-nav" href="{% url 'usuario:inicio' %}">Inicio</a>
-            <a class="a-nav" href="{% url 'usuario:campeones' %}">Campeones</a>
+        <div class="col-xs-1">
+            <h4 class="nom-usu">{{ user.username }}</h4>
+        </div>
+        <div class="col-xs-11">
+            <a class="a-nav" href="{% url 'usuario:iniciostaff' %}">Inicio</a>
+            <a class="a-nav" href="{% url 'usuario:regstaff' %}">Crear Usuario</a>
+            <a class="a-nav" href="{% url 'usuario:regcampeon' %}">Crear Campeon</a>
+            <a class="a-nav" href="{% url 'usuario:item' %}">Agregar Items</a>
+            <a class="a-nav" href="{% url 'usuario:listar' %}">Ver Campeon</a>
+            <a class="a-nav" href="{% url 'usuario:lista_items' %}">Ver Items</a>
             <a class="a-nav" href="{% url 'usuario:cerrar_sesion' %}">Cerrar Sesión</a>
-            <h4>{{ user.username }}</h4>
         </div>
     </div>
+    {% else %}
+    <div class="row center-xs" id="nav-prin">
+        <div class="col-xs-1">
+            <h4 class="nom-usu">{{ user.username }}</h4>
+        </div>
+        <div class="col-xs-11">
+            <a class="a-nav" href="{% url 'usuario:inicio' %}">Inicio</a>
+            <a class="a-nav" href="{% url 'usuario:listar' %}">Ver Campeon</a>
+            <a class="a-nav" href="{% url 'usuario:cerrar_sesion' %}">Cerrar Sesión</a>
+        </div>
+    </div>
+    {% endif %}
     {% block content %}
     {% endblock %}
-
     <!--Script-->
     <script src="{% static 'js/jquery-3.4.1.js'%}"></script>
     <script src="{% static 'js/bootstrap.js'%}"></script>
     <script src="{% static 'js/jquery.validate.js'%}"></script>
     <script src="{% static 'js/app.js' %}"></script>
 </body>
+
 </html>
