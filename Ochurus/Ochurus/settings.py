@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'usuario'
+    'usuario',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -138,4 +139,15 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'tavprueba@gmail.com'
 EMAIL_HOST_PASSWORD = 'tavprueba20'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'>>>>>>> origin/api
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+=======
+AUTH_USER_MODEL = 'usuario.Usuario'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+>>>>>>> origin/api

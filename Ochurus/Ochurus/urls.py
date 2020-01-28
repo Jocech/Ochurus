@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.models import User
+from rest_framework import routers, viewsets, serializers
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 <<<<<<< HEAD
     path('',include('usuario.urls',namespace='usuario')),
 =======
+    path('',include('usuario.urls')),
+    path('api-auth/', include('rest_framework.urls',namespace='rest_framework'))
 >>>>>>> origin/api
 ]
