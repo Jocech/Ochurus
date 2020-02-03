@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PWA_SERVICE_WORKER_PATH = os.path.join (BASE_DIR, 'Ochurus/static/js', 'serviceworker.js')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usuario',
     'rest_framework',
+<<<<<<< HEAD
     'social_django',
+=======
+    'pwa',
+    'webapp',
+>>>>>>> b966907037663343b9c3ca3ee2b52f9f2cfff189
 ]
 
 MIDDLEWARE = [

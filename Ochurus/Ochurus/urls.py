@@ -24,5 +24,10 @@ urlpatterns = [
     path('',include('usuario.urls',namespace='usuario')),
     path('',include('usuario.urls')),
     path('api-auth/', include('rest_framework.urls',namespace='rest_framework')),
+<<<<<<< HEAD
     path('oauth/', include('social_django.urls', namespace='social'))
+=======
+    path('', include('pwa.urls')),
+
+>>>>>>> b966907037663343b9c3ca3ee2b52f9f2cfff189
 ]
