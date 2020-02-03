@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es-cl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,6 @@
 <body>
     <div class="row end-md center-xs nav-reg">
         <div class="col-xs-12">
-            <img src="img/logo.png" alt="" class="Logo">
             <a href="{% url 'usuario:registrar' %}" class="btn btn-danger">Regístrate</a>
         </div>
     </div>
@@ -30,11 +28,11 @@
     </div>
     <div class="row center-xs">
         <div class="col-xs-3 letrasBlancas">
-                {% if messages %}
-                    {% for message in messages %}
-                    <h4>{{message}}</h4>
-                    {% endfor %}
-                {% endif %}
+            {% if messages %}
+            {% for message in messages %}
+            <h4>{{message}}</h4>
+            {% endfor %}
+            {% endif %}
             <form action="{% url 'usuario:index' %}" id="formularioIndex" method="POST">
                 <br>
                 {% csrf_token %}
@@ -49,13 +47,15 @@
                 <div>
                     <br>
                     <button class="btn btn-danger" type="submit">Iniciar Sesión</button>
+                    <br>    
+                    <a href="{% url 'social:begin' 'facebook' %}">Login con facebook</a>
                     <br>
                     <a href="{% url 'usuario:password_reset' %}">Olvidé la contraseña</a>
                 </div>
             </form>
         </div>
     </div>
-
+    
     <!--Scripts-->
     <script src="{% static 'js/jquery-3.4.1.js'%}"></script>
     <script src="{% static 'js/bootstrap.js'%}"></script>

@@ -91,41 +91,41 @@ $("#formularioRegCampeon").validate({
     errorClass: 'is-invalid',
     rules: {
         nombre: {
-            required:true,
+            required: true,
         },
         rol: {
-            required:true,
+            required: true,
         },
         popularidad: {
-            required:true,
+            required: true,
             maxlength: 2
         },
         porcentaje_victorias: {
-            required:true,
+            required: true,
             maxlength: 2
         },
         porcentaje_derrotas: {
-            required:true,
+            required: true,
             maxlength: 2
         }
     },
     messages: {
         nombre: {
-          required: "Este campo no puede estar vacio"
+            required: "Este campo no puede estar vacio"
         },
         rol: {
-           required:"Este campo no puede estar vacio"
+            required: "Este campo no puede estar vacio"
         },
-        popularidad:{
-            required:"Este campo no puede estar vacio",
+        popularidad: {
+            required: "Este campo no puede estar vacio",
             maxlength: "Debe tener maximo 2 digitos"
         },
-        porcentaje_victorias:{
-            required:"Este campo no puede estar vacio",
+        porcentaje_victorias: {
+            required: "Este campo no puede estar vacio",
             maxlength: "Debe tener maximo 2 digitos"
         },
-        porcentaje_derrotas:{
-            required:"Este campo no puede estar vacio",
+        porcentaje_derrotas: {
+            required: "Este campo no puede estar vacio",
             maxlength: "Debe tener maximo 2 digitos"
         }
     }
@@ -133,7 +133,7 @@ $("#formularioRegCampeon").validate({
 $("#formularioRegistrarStaff").validate({
     errorClass: 'is-invalid',
     rules: {
-        username:{
+        username: {
             required: true,
             maxlength: 25,
             minlength: 3
@@ -166,7 +166,7 @@ $("#formularioRegistrarStaff").validate({
 
     },
     messages: {
-        username:{
+        username: {
             required: "Este campo no puede estar vacio",
             minlength: "Debe contener al menos 3 carácteres",
             maxlength: "No puede ser de mas de 25 carácteres"
@@ -198,3 +198,4 @@ $("#formularioRegistrarStaff").validate({
 
     }
 })
+

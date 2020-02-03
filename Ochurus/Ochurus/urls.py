@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('usuario.urls',namespace='usuario')),
     path('',include('usuario.urls')),
-    path('api-auth/', include('rest_framework.urls',namespace='rest_framework'))
-
+    path('api-auth/', include('rest_framework.urls',namespace='rest_framework')),
+    path('oauth/', include('social_django.urls', namespace='social'))
 ]

@@ -9,7 +9,11 @@ from .models import Usuario, Campeon, Item
 from .forms import RegistrarUsuario, RegistrarCampeon
 
 
+
+
 # Create your views here.
+
+
 
 def index(request):
     if request.POST:
